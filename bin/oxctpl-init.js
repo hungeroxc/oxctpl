@@ -3,7 +3,6 @@
 const program = require('commander')
 const path = require('path')
 const fs = require('fs')
-const glob = require('glob')
 const inquirer = require('inquirer')
 const chalk = require('chalk')
 
@@ -23,7 +22,7 @@ if(!projectName) {
 
 // 路径和目录判断
 // 遍历当前目录
-const list = glob.sync('*')
+const list = fs.readdirSync('.')
 // 获取当前目录名字  process.cwd()获取进程的当前工作目录
 let rootName = path.basename(process.cwd())
 let next = undefined
